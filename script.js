@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     const catalogo = [
         { id: 1, imagen: "imagenes/producto1.jpg", precio:200, value: 200 ,nombre: "Vans para hombre"},
-        { id: 2, imagen: "imagenes/producto2.jpg", precio:455, value: 455 ,nombre: "Pumas"},
+        { id: 2, imagen: "imagenes/producto2.jpg", precio:455, value: 455 ,nombre: "Pumas para mujer "},
         { id: 3, imagen: "imagenes/producto3.jpg", precio:890, value: 890 ,nombre: "Zapato de vestir"},
-        { id: 4, imagen: "imagenes/producto4.jpg", precio:20, value: 2000 ,nombre: "Nike Mujer"},
-        { id: 5, imagen: "imagenes/producto5.jpg", precio:20, value: 2000 ,nombre: "Nike Mujer"},
+        { id: 4, imagen: "imagenes/producto4.jpg", precio:200, value: 2000 ,nombre: "Nike hombre"},
+        { id: 5, imagen: "imagenes/producto5.jpg", precio:3000, value: 3000 ,nombre: "Nike Mujer"},
         
         // Agrega más productos aquí
     ];
