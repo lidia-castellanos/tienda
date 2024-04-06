@@ -1,6 +1,37 @@
-.card {
+.catalogo {
+    width: 60dvw;
+    
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    
 }
 
+p{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.card
+
+.card *:nth-child(3) {
+    width: 2dvw;
+    height: 4dvh;
+    /* background-color: aqua; */
+    border: 2 px solid black;
+}
+
+
+
+.container .resumen {
+    margin-top: -50dvh;
+    width: 25dvw;
+    margin-left: 70dvw;
+
+}
+
+header {
+    text-align: center;
+    font-size: xx-large;
+
+}

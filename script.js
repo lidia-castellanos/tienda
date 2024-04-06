@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     const catalogo = [
-        { id: 1, imagen: "imagenes/producto1.jpg", precio:10, value: 10 },
-        { id: 2, imagen: "imagenes/producto2.jpg", precio:15, value: 15 },
-        { id: 3, imagen: "imagenes/producto3.jpg", precio:20, value: 20 },
+        { id: 1, imagen: "imagenes/producto1.jpg", precio:200, value: 200 ,nombre: "Vans para hombre"},
+        { id: 2, imagen: "imagenes/producto2.jpg", precio:455, value: 455 ,nombre: "Pumas"},
+        { id: 3, imagen: "imagenes/producto3.jpg", precio:890, value: 890 ,nombre: "Zapato de vestir"},
+        { id: 4, imagen: "imagenes/producto4.jpg", precio:20, value: 2000 ,nombre: "Nike Mujer"},
+        { id: 5, imagen: "imagenes/producto5.jpg", precio:20, value: 2000 ,nombre: "Nike Mujer"},
+        
         // Agrega más productos aquí
     ];
     const catalogoContainer = document.getElementById("catalogo");
@@ -14,10 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
         card.classList.add("col-md-4", "mb-4");
         card.innerHTML = `
     <div class="card">
-    <img src="${producto.imagen}" class="card-img-top " alt="Producto ${producto.id}">
+    <img src="${producto.imagen}" class="card-img-top " alt="${producto.nombre}" title="${producto.nombre}">
     <div class="card-body ">
-    <h5 class="card-title">Producto ${producto.id}</h5>
-    <p class="card-text">Precio: $${producto.precio}</p>
+    <h5 class="card-title">${producto.nombre}</h5>
+    <p class="card-text">$${producto.precio}</p>
     <label for="cantidadProducto${producto.id}">Cantidad:</label>
     <input type="number" id="cantidadProducto${producto.id}" class="form-control">
     <button class="btn btn-primary mt-2" data-id="${producto.id}">Agregar al Carrito</button>
@@ -60,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         carrito.forEach((item) => {
             const fila = document.createElement("tr");
             fila.innerHTML = `
-    <td>Producto ${item.producto.id}</td>
+    <td> ${item.producto.nombre}</td>
     <td>${item.cantidad}</td>
     <td>$${item.producto.precio * item.cantidad}</td>
     `;
