@@ -11,7 +11,7 @@ padding: 1em;
 }
 
 .container .resumen {
-    margin-top: -130dvh;
+    margin-top: -160dvh;
     width: 25dvw;
     margin-left: 70dvw;
 
@@ -19,6 +19,6 @@ padding: 1em;
 
 header {
     text-align: center;
-    font-size: xx-large;
+    font-size: 2.5em;
 
 }
