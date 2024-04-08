@@ -1,11 +1,15 @@
+let subtotalTotal = 0;
+let another=0;
 document.addEventListener("DOMContentLoaded", function () {
+
+
     const catalogo = [
-        { id: 1, imagen: "imagenes/producto1.jpg", precio:200, value: 200 ,nombre: "Vans para hombre"},
-        { id: 2, imagen: "imagenes/producto2.jpg", precio:455, value: 455 ,nombre: "Pumas para mujer "},
-        { id: 3, imagen: "imagenes/producto3.jpg", precio:890, value: 890 ,nombre: "Zapato de vestir"},
-        { id: 4, imagen: "imagenes/producto4.jpg", precio:200, value: 2000 ,nombre: "Nike hombre"},
-        { id: 5, imagen: "imagenes/producto5.jpg", precio:3000, value: 3000 ,nombre: "Nike Mujer"},
-        
+        { id: 1, imagen: "imagenes/producto1.jpg", precio: 200, value: 200, nombre: "Vans para hombre" },
+        { id: 2, imagen: "imagenes/producto2.jpg", precio: 455, value: 455, nombre: "Pumas para mujer " },
+        { id: 3, imagen: "imagenes/producto3.jpg", precio: 890, value: 890, nombre: "Zapato de vestir" },
+        { id: 4, imagen: "imagenes/producto4.jpg", precio: 2000, value: 2000, nombre: "Nike hombre" },
+        { id: 5, imagen: "imagenes/producto5.jpg", precio: 3000, value: 3000, nombre: "Nike Mujer" },
+
         // Agrega más productos aquí
     ];
     const catalogoContainer = document.getElementById("catalogo");
@@ -27,18 +31,28 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     </div>
     `;
-    
-        catalogoContainer.appendChild(card);
+        try {
+            catalogoContainer.appendChild(card);
 
+        } catch (error) {
+
+        }
+
+        console.log(catalogoContainer);
+        // console.log(card);
         const botonAgregar = card.querySelector("button");
-     
+
         botonAgregar.addEventListener("click", function () {
-            
+
             const cantidad = parseInt(document.getElementById(`cantidadProducto${producto.id}`).value);
             if (cantidad > 0) {
                 agregarProductoAlCarrito(producto, cantidad);
             }
         });
+
+
+
+
     });
 
     const carrito = [];
@@ -57,9 +71,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function actualizarResumenCompra() {
+
         // Limpia el resumen de compra
         resumenCompra.innerHTML = "";
-        let subtotalTotal = 0;
+
         carrito.forEach((item) => {
             const fila = document.createElement("tr");
             fila.innerHTML = `
@@ -67,10 +82,42 @@ document.addEventListener("DOMContentLoaded", function () {
     <td>${item.cantidad}</td>
     <td>$${item.producto.precio * item.cantidad}</td>
     `;
+
             resumenCompra.appendChild(fila);
+
+
+
+
+
             subtotalTotal += item.producto.precio * item.cantidad;
+           
+
         });
-            // Actualiza el total
-            total.textContent = `$${subtotalTotal}`;
-        }
-    });
+        
+        // Actualiza el total
+        total.textContent = `$${subtotalTotal}`;
+        
+        const botonComprar = document.getElementById("finalizarCompra");
+        
+        botonComprar.addEventListener("click", function () {
+
+
+            if (subtotalTotal > 0) {
+                window.location.assign("recibo.html", "_blank");
+                
+               
+            }
+           
+        });
+
+    }
+
+    
+});
+
+
+
+
+
+
+
