@@ -1,5 +1,5 @@
 let subtotalTotal = 0;
-let another = 0;
+
 document.addEventListener("DOMContentLoaded", function () {
     localStorage.clear();
 

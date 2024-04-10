@@ -17,8 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
            
            
             <div class="card text-center" >
+            <div class="card-header"> ${compras.cantidad} piezas</div>
                 <img src= ${compras.producto.imagen} class="pComprados" ></img>
-                
+                <div class="card-body ">
                 <h5>${compras.producto.nombre}</h5>
 
             </div>
