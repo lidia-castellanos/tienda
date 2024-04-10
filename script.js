@@ -1,7 +1,7 @@
 let subtotalTotal = 0;
-let another=0;
+let another = 0;
 document.addEventListener("DOMContentLoaded", function () {
-
+    localStorage.clear();
 
     const catalogo = [
         { id: 1, imagen: "imagenes/producto1.jpg", precio: 200, value: 200, nombre: "Vans para hombre" },
@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const catalogoContainer = document.getElementById("catalogo");
     const resumenCompra = document.getElementById("resumen Compra");
     const total = document.getElementById("total");
+    const totalArticulos=0;
     // Genera las tarjetas de productos en el catálogo
     catalogo.forEach((producto) => {
         const card = document.createElement("div");
@@ -38,14 +39,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        console.log(catalogoContainer);
-        // console.log(card);
         const botonAgregar = card.querySelector("button");
 
         botonAgregar.addEventListener("click", function () {
 
             const cantidad = parseInt(document.getElementById(`cantidadProducto${producto.id}`).value);
             if (cantidad > 0) {
+                
                 agregarProductoAlCarrito(producto, cantidad);
             }
         });
@@ -62,10 +62,16 @@ document.addEventListener("DOMContentLoaded", function () {
         if (productoEnCarrito) {
             // Si ya está en el carrito, actualiza la cantidad
             productoEnCarrito.cantidad += cantidad;
+
         } else {
+            
             // Si no está en el carrito, agrega un nuevo elemento al carrito
-            carrito.push({ producto, cantidad });
+            carrito.push({ producto, cantidad,totalArticulos });
+            
+
+
         }
+      
         // Actualiza el resumen de la compra
         actualizarResumenCompra();
     }
@@ -87,37 +93,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
             subtotalTotal += item.producto.precio * item.cantidad;
-           
+
 
         });
-        
+
         // Actualiza el total
         total.textContent = `$${subtotalTotal}`;
-        
+
         const botonComprar = document.getElementById("finalizarCompra");
-        
+
         botonComprar.addEventListener("click", function () {
 
 
             if (subtotalTotal > 0) {
-                window.location.assign("recibo.html", "_blank");
                 
-               
-            }
-           
-        });
+                window.open("recibo.html", "_blank");
 
+
+            }
+
+        });
+        localStorage.setItem("compras", JSON.stringify(carrito));
     }
 
-    
+
 });
-
-
-
-
-
-
-
