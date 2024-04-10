@@ -1,59 +1,89 @@
+body {
+    background: rgb(214,201,207);
+    background: linear-gradient(302deg, rgba(214,201,207,1) 16%, rgba(232,236,241,0.896796218487395) 100%);
+}
+.card{
+    border: 2px solid black;
+    background-color: transparent;
+}
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-items: center;
     width: 60dvw;
     margin-left: 10px;
-    
+
 
 }
 
-* {
-
-    text-align: center;
+.labels .card-header{
+    background-color: black;
+    color:white;
 }
 
 
-/* .card img{
-    
+.labels .card img {
+
     padding: 2px;
-    border: 2px solid;
+
     width: 100px;
     height: 100px;
 
-} */
-
-.labels .card{
-    
-    width: 300px;
-    height: 300px;
 }
 
 
 
-.productos{
+.labels .card {
+
+    width: 330px;
+    padding: 2px;
+    height: 200px;
+}
+
+label {
+    font-size: x-large;
+    text-align: end;
+    padding: 10px;
+}
+
+* {
+    text-align: center;
+}
+
+.productos {
     height: 100vh;
     width: 70vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
-    /* border: 2px solid; */
+
+
 }
 
+#precioCard {
+    margin-top: -15vh;
+    margin-left: 5vw;
+    overflow: hidden;
+}
 
 .container .resumen {
 
     position: fixed;
 
-    margin-top: -950px;
+    margin-top: -990px;
     width: 25dvw;
     margin-left: 65dvw;
 
 }
 
-header {
+#headerCompra {
+
     text-align: center;
+    font-size: 2.5em;
+}
+
+.productos .header {
+    text-align: end;
     font-size: 2.5em;
 
 }

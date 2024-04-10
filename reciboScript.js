@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <img src= ${compras.producto.imagen} class="pComprados" ></img>
                 <div class="card-body ">
                 <h5>${compras.producto.nombre}</h5>
+                <h5 id="precioCard">Precio unitario: $ ${compras.producto.precio}</h5>
 
             </div>
 

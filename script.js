@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: 3, imagen: "imagenes/producto3.jpg", precio: 890, value: 890, nombre: "Zapato de vestir" },
         { id: 4, imagen: "imagenes/producto4.jpg", precio: 2000, value: 2000, nombre: "Nike hombre" },
         { id: 5, imagen: "imagenes/producto5.jpg", precio: 3000, value: 3000, nombre: "Nike Mujer" },
+        { id: 6, imagen: "imagenes/producto6.jpg", precio: 900, value: 3000, nombre: "Zapatillas" },
 
         // Agrega más productos aquí
     ];
